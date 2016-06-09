@@ -1,0 +1,21 @@
+.textInput {
+  display: block;
+  margin: 0 auto;
+}
+
+.languageSelect {
+  display: block;
+  margin: 20px auto;
+}
+
+.translateButton {
+  display: block;
+  margin: 20px auto;
+}
+
+.translatedLanguage {
+  height: 200px;
+  width: 400px;
+  border: 2px solid black;
+  margin: 0 auto;
+}
