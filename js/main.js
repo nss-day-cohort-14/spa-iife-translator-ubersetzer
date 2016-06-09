@@ -12,6 +12,9 @@ var translateButton = document.getElementById("translateButton");
 // Translator output
 var translatorOutput = document.getElementById("translatedLanguage");
 
+// Translate from web button
+var translateFromWebButton = document.getElementById("translateFromWeb");
+
 
 function translatePressed() {
 
@@ -55,10 +58,48 @@ function outputToDOM(translatedData) {
 }
 
 
+
+function translateFromWeb() {
+
+    var textToTranslate = userInput.value.split(" ").join("+");
+
+    var languageSelected = languageSelector.value;
+    var languageToTranslateTo = null;
+
+    if (languageSelected === "Danish") {
+      languageToTranslateTo = "da";
+    } else if (languageSelected === "Spanish") {
+      languageToTranslateTo = "es";
+    } else if (languageSelected === "French") {
+      languageToTranslateTo = "fr";
+    }
+
+    var queryString = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160609T150101Z.6da8e3ee25967aa0.1b10dcaca38379560c9d05b4df682a0f5e7a4554&text=" + textToTranslate + "&lang=en-" + languageToTranslateTo;
+
+    var xmlhttp = new XMLHttpRequest();
+    
+    xmlhttp.onreadystatechange = function() {
+      
+      if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+
+        var translatedObject = JSON.parse(xmlhttp.responseText);
+
+        translatorOutput.innerHTML = `<p class="translatedText">${translatedObject.text}</p>`;
+
+      }
+    };
+    xmlhttp.open("GET", queryString);
+    xmlhttp.send();
+
+}
+
+
+
+
 // Event listeners
 
 // Translate button pressed
 translateButton.addEventListener("click", translatePressed);
-
+translateFromWebButton.addEventListener("click", translateFromWeb);
 
 
