@@ -18,6 +18,8 @@ var translateFromWebButton = document.getElementById("translateFromWeb");
 
 function translatePressed() {
 
+
+
   // Get current value of userInput
   var textToTranslate = userInput.value;
 
@@ -34,16 +36,22 @@ function translatePressed() {
 
     // Pass textToTranslate to translateToDanish function and store in translatedData
     translatedData = Languages.translateToDanish(textToTranslate);
+    document.body.style.backgroundImage = "url('../img/denmark.jpg')";
+    document.body.style.backgroundSize = "cover";
   
   } else if (languageToTranslate === "Spanish") {
 
     // Pass textToTranslate to translateToSpanish function and store in translatedData
     translatedData = Languages.translateToSpanish(textToTranslate);
+    document.body.style.backgroundImage = "url('../img/spain.jpg')";
+    document.body.style.backgroundSize = "cover";
 
   } else if (languageToTranslate === "French") {
 
     // Pass textToTranslate to translateToFrench function and store in translatedData
     translatedData = Languages.translateToFrench(textToTranslate);
+    document.body.style.backgroundImage = "url('../img/france.jpg')";
+    document.body.style.backgroundSize = "cover";
 
   }
 
