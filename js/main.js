@@ -61,7 +61,7 @@ function translatePressed() {
 
 function outputToDOM(translatedData) {
 
-  translatorOutput.innerHTML = `<p class="translatedText">${translatedData.translated}</p>`;
+  translatorOutput.innerHTML = `<div class="translatedText">${translatedData.translated}</div>`;
 
 }
 
