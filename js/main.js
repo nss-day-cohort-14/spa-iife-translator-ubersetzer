@@ -31,7 +31,7 @@ function translatePressed() {
 
     // Pass textToTranslate to translateToDanish function and store in translatedData
     translatedData = Languages.translateToDanish(textToTranslate);
-  
+
   } else if (languageToTranslate === "Spanish") {
 
     // Pass textToTranslate to translateToSpanish function and store in translatedData
@@ -50,7 +50,7 @@ function translatePressed() {
 
 function outputToDOM(translatedData) {
 
-  translatorOutput.innerHTML = `<p class="translatedText">${translatedData.translated}</p>`;
+  translatorOutput.innerHTML = `<div class="translatedText">${translatedData.translated}</div>`;
 
 }
 

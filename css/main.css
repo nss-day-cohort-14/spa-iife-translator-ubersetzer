@@ -1,6 +1,14 @@
+.header-styling {
+  text-align: center;
+  background-image: linear-gradient(to top , #747474, #388AFF);
+  color: #B6B600;
+}
+
 .textInput {
   display: block;
   margin: 0 auto;
+  background-color: lightyellow;
+  color: black;
 }
 
 .languageSelect {
@@ -11,6 +19,9 @@
 .translateButton {
   display: block;
   margin: 20px auto;
+  color: #4162FF;
+  font-weight: 700;
+  font-style: italic;
 }
 
 #translateHeader h2 {
@@ -23,4 +34,13 @@
   width: 400px;
   border: 2px solid black;
   margin: 0 auto;
+  background-image: linear-gradient(to top , #747474, #388AFF);
 }
+
+.translatedText {
+  padding-top: 25px;
+  text-align: center;
+  color: lightyellow;
+  font-size: 2em;
+}
+
