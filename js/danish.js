@@ -3,10 +3,10 @@ var Languages = (function(oldIFFE){
   var danishLexicon = {
     "merry": "god",
     "christmas": "jul",
-    "and": "uber",
-    "happy": "",
-    "new": "",
-    "year": ""
+    "and": "og",
+    "happy": "lykkelig",
+    "new": "ny",
+    "year": "år"
   };
 
 
