@@ -20,10 +20,8 @@ var translateFromWebButton = document.getElementById("translateFromWeb");
 
 function translatePressed() {
 
-
-
   // Get current value of userInput
-  var textToTranslate = userInput.value;
+  var textToTranslate = userInput.value.toLowerCase();
 
   // Get current language selected
   var languageToTranslate = languageSelector.value;
@@ -76,8 +74,18 @@ function outputToDOM(translatedData) {
 
 // Created function to have text turned to speech
 function speakButtonPressed() {
+  // Get current text 
   var textToSpeak = document.getElementById("translatedText").innerHTML;
-  responsiveVoice.speak(textToSpeak);
+
+  // Get current language selected
+  if (languageSelector.value === "French") {
+    responsiveVoice.speak(textToSpeak, "French Female");
+  } else if (languageSelector.value === "Spanish") {
+    responsiveVoice.speak(textToSpeak, "Spanish Female");
+  } else if (languageSelector.value === "Danish") {
+    responsiveVoice.speak(textToSpeak, "Danish Female");
+  }
+
 }
 
 function translateFromWeb() {
