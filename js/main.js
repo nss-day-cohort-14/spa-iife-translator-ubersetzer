@@ -20,10 +20,8 @@ var translateFromWebButton = document.getElementById("translateFromWeb");
 
 function translatePressed() {
 
-
-
   // Get current value of userInput
-  var textToTranslate = userInput.value;
+  var textToTranslate = userInput.value.toLowerCase();
 
   // Get current language selected
   var languageToTranslate = languageSelector.value;
