@@ -12,6 +12,8 @@ var translateButton = document.getElementById("translateButton");
 // Translator output
 var translatorOutput = document.getElementById("translatedLanguage");
 
+var speakButton = document.getElementById("speak");
+
 // Translate from web button
 var translateFromWebButton = document.getElementById("translateFromWeb");
 
@@ -40,7 +42,7 @@ function translatePressed() {
     document.body.style.backgroundImage = "url('../img/denmark.jpg')";
     // Set image to fill page
     document.body.style.backgroundSize = "cover";
-  
+
   } else if (languageToTranslate === "Spanish") {
 
     // Pass textToTranslate to translateToSpanish function and store in translatedData
@@ -68,9 +70,14 @@ function translatePressed() {
 
 function outputToDOM(translatedData) {
 
-  // Output translated data to translatorOutput container
-  translatorOutput.innerHTML = `<div class="translatedText">${translatedData.translated}</div>`;
+  translatorOutput.innerHTML = `<div id="translatedText">${translatedData.translated}</div>`;
 
+}
+
+// Created function to have text turned to speech
+function speakButtonPressed() {
+  var textToSpeak = document.getElementById("translatedText").innerHTML;
+  responsiveVoice.speak(textToSpeak);
 }
 
 function translateFromWeb() {
@@ -110,7 +117,7 @@ function translateFromWeb() {
       document.body.style.backgroundImage = "url('../img/france.jpg')";
       // Have background image cover entire page
       document.body.style.backgroundSize = "cover";
-      
+
     }
 
     // Build API queryString, using textToTranslate, and languageToTranslateTo
@@ -121,7 +128,7 @@ function translateFromWeb() {
 
     // Check that everything came back ok
     xmlhttp.onreadystatechange = function() {
-      
+
       // Make sure readyState is good and status is ok
       if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 
@@ -129,7 +136,7 @@ function translateFromWeb() {
         var translatedObject = JSON.parse(xmlhttp.responseText);
 
         // Output translated text to translatorOutput div
-        translatorOutput.innerHTML = `<p class="translatedText">${translatedObject.text}</p>`;
+        translatorOutput.innerHTML = `<div id="translatedText">${translatedObject.text}</div>`;
 
       }
     };
@@ -144,6 +151,10 @@ function translateFromWeb() {
 
 // Translate button pressed
 translateButton.addEventListener("click", translatePressed);
+
+// Speak button pressed
+speakButton.addEventListener("click", speakButtonPressed);
+
 // Translate from web button pressed
 translateFromWebButton.addEventListener("click", translateFromWeb);
 

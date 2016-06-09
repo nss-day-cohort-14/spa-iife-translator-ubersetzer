@@ -30,17 +30,26 @@
 }
 
 .translatedLanguage {
-  height: 200px;
-  width: 400px;
+  height: 150px;
+  width: 450px;
   border: 2px solid black;
   margin: 0 auto;
-  background-image: linear-gradient(to top , #747474, #388AFF);
+  background-image: linear-gradient(to top , #B1B1B1, #317DEA);
 }
 
-.translatedText {
+#translatedText {
   padding-top: 25px;
   text-align: center;
   color: lightyellow;
   font-size: 2em;
 }
 
+.speakButton{
+  text-align: center;
+  color: blue;
+}
+
+.speak {
+  display: block;
+  margin: 10px auto;
+}
