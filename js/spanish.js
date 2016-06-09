@@ -47,4 +47,4 @@ var Languages = (function(oldIFFE){
 
   return oldIFFE;
 
-})(Languages);
+}(Languages || {}));
