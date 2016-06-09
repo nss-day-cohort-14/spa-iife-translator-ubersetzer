@@ -12,6 +12,8 @@ var translateButton = document.getElementById("translateButton");
 // Translator output
 var translatorOutput = document.getElementById("translatedLanguage");
 
+var speakButton = document.getElementById("speak");
+
 
 function translatePressed() {
 
@@ -50,8 +52,14 @@ function translatePressed() {
 
 function outputToDOM(translatedData) {
 
-  translatorOutput.innerHTML = `<div class="translatedText">${translatedData.translated}</div>`;
+  translatorOutput.innerHTML = `<div id="translatedText">${translatedData.translated}</div>`;
 
+}
+
+// Created function to have text turned to speech
+function speakButtonPressed() {
+  var textToSpeak = document.getElementById("translatedText").innerHTML;
+  responsiveVoice.speak(textToSpeak);
 }
 
 
@@ -60,5 +68,7 @@ function outputToDOM(translatedData) {
 // Translate button pressed
 translateButton.addEventListener("click", translatePressed);
 
+// Speak button pressed
+speakButton.addEventListener("click", speakButtonPressed);
 
 
